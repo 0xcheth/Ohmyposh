@@ -1,0 +1,117 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#94e2d5",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "style": "plain",
+          "template": " {{.CurrentDate | date .Format }} ",
+          "type": "time"
+        },
+        {
+          "foreground": "#a6e3a1",
+          "style": "plain",
+          "template": "{{.UserName}} on",
+          "type": "text"
+        },
+        {
+          "foreground": "#74c7ec",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "plain",
+          "template": " <#3498db> {{ .Path }}/</>.prompt ",
+          "type": "path"
+        },
+        {
+          "foreground": "#74c7ec",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        },
+        {
+          "foreground": "#94e2d5",
+          "style": "plain",
+          "template": " {{.Context}}{{if .Namespace}} \uf061 {{.Namespace}}{{end}}",
+          "type": "kubectl"
+        },
+        {
+          "foreground": "#4CAF50",
+          "properties": {
+            "branch_icon": "",
+            "fetch_status": false
+          },
+          "style": "plain",
+          "template": "<#2196F3>git:(</>{{ .HEAD }}<#2196F3>)</>",
+          "type": "git"
+        },
+        {
+          "foreground": "#FFC107",
+          "properties": {
+            "fetch_version": true
+          },
+          "style": "plain",
+          "template": "<#FFFFFF>via</> \ue781 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "type": "node"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [       
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#abebc6",
+          "template": " {{.Shell}}"
+        },
+        {
+          "foreground": "#cd5e42",
+          "style": "plain", 
+          "template": " <#f5c2e7>  </>{{round .PhysicalPercentUsed .Precision }}%",
+          "properties": {
+            "precision": 0
+          },
+          "type": "sysinfo"
+        },
+       {
+          "foreground": "#cd5e42",
+          "style": "plain",
+          "template": " <#f5c2e7>  </>{{round .Load1 .Precision}}%",
+          "properties": {
+            "precision": 0
+          },
+          "type": "sysinfo"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "segments": [
+        
+        {
+        "type": "text",
+          "style": "plain",
+          "foreground": "#cb4335",
+          "template": " > "
+         }
+        
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 3
+}
+
